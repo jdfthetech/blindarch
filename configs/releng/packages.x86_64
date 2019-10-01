@@ -3,31 +3,15 @@
 virtualbox-guest-utils
 virtualbox-guest-dkms
 
-# add support for xorg 
-xorg-server
-xorg-xinit
-xorg-twm
-xterm
 
-#add support for desktop
-i3-gaps
+#some extras
 zsh
 zsh-completions
-termite
-compton
 networkmanager
-network-manager-applet
 xdg-user-dirs
 bash-completion
 perl
 
-# screen magnifier kmag and deps
-kmag
-hicolor-icon-theme
-kio
-libqaccessibilityclient
-extra-cmake-modules
-kdoctools
 
 
 # basic packages needed to run
@@ -35,7 +19,7 @@ alsa-utils
 arch-install-scripts
 b43-fwcutter
 bash-completion
-brltty-minimal
+brltty
 broadcom-wl
 btrfs-progs
 clonezilla
