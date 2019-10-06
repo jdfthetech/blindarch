@@ -1,6 +1,6 @@
 #!/bin/sh
 ################################################################################
-# blindarch-installer - Official Installer for BlindArch                       #
+# blindarch-install - Official Installer for BlindArch                       #
 #                                                                              #
 # jdf@onlinemarketspecialist.com                                               #
 #                                                                              #
@@ -15,11 +15,11 @@
 ################################################################################
 
 
-# blindarch-installer version
+# blindarch-install version
 VERSION='0.0.1'
 
 # path to blackarch-installer
-BI_PATH='/usr/share/blindarch-installer'
+BI_PATH='/usr/share/blindarch-install'
 
 # true / false
 TRUE=0
@@ -235,7 +235,7 @@ err()
 banner()
 {
   columns="$(tput cols)"
-  str="--==[ blindarch-installer v$VERSION ]==--"
+  str="--==[ blindarch-install v$VERSION ]==--"
 
   printf "${BLUEB}%*s${NC}\n" "${COLUMNS:-$(tput cols)}" | tr ' ' '-'
 
@@ -2359,7 +2359,7 @@ self_updater()
   printf "\n\n"
 
   pacman -Syy > $VERBOSE 2>&1
-  repo="$(pacman -Ss blindarch-installer | head -1 | cut -d ' ' -f 2 |
+  repo="$(pacman -Ss blindarch-install | head -1 | cut -d ' ' -f 2 |
     cut -d '-' -f 1 | tr -d '.')0"
   this="$(echo $VERSION | tr -d '.')0"
 
@@ -2367,10 +2367,10 @@ self_updater()
   then
     printf "\n\n"
     warn 'A new version is available! Going to fuck, err, update myself.'
-    pacman -S --overwrite='*' --noconfirm blindarch-installer > $VERBOSE 2>&1
+    pacman -S --overwrite='*' --noconfirm blindarch-install > $VERBOSE 2>&1
     yes | pacman -Scc > $VERBOSE 2>&1
     wprintf "\n[+] Updated successfully. Please restart the installer now!\n"
-    chmod +x /usr/share/blindarch-installer/blindarch-install
+    chmod +x /usr/share/blindarch-install
     exit $SUCCESS
   fi
 
